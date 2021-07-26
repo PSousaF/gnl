@@ -17,7 +17,10 @@ static char	*ft_split_line(int ret, char **save)
 
 	i = 0;
 	if (ret < 0 || BUFFER_SIZE < 1 || !*save || *save[i] == '\0')
+	{
+		ft_strfree(save);
 		return (NULL);
+	}
 	while ((*save)[i] != '\n' && (*save)[i])
 		i++;
 	if (ft_strchr (*save, '\n'))
